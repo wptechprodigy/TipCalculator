@@ -24,7 +24,8 @@ class MainViewController: UIViewController {
             resultView,
             billInputView,
             tipInputView,
-            splitTipInputView
+            splitTipInputView,
+            UIView()
         ])
         stackView.axis = .vertical
         stackView.spacing = 36
@@ -35,7 +36,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = ThemeColor.bg
         layoutSubviews()
     }
     
