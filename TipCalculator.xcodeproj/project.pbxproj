@@ -28,6 +28,9 @@
 		0441BDE0296F87F300541F26 /* UIColor+HexString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0441BDDF296F87F300541F26 /* UIColor+HexString.swift */; };
 		0441BDE3296F89DB00541F26 /* ThemeColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0441BDE2296F89DB00541F26 /* ThemeColor.swift */; };
 		0441BDE52970020600541F26 /* ThemeFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0441BDE42970020600541F26 /* ThemeFont.swift */; };
+		0441BDE829700A9E00541F26 /* LabelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0441BDE729700A9E00541F26 /* LabelFactory.swift */; };
+		0441BDEA2970CA6D00541F26 /* AmountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0441BDE92970CA6D00541F26 /* AmountView.swift */; };
+		0441BDEC297156DB00541F26 /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0441BDEB297156DB00541F26 /* UIView+Shadow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +71,9 @@
 		0441BDDF296F87F300541F26 /* UIColor+HexString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+HexString.swift"; sourceTree = "<group>"; };
 		0441BDE2296F89DB00541F26 /* ThemeColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeColor.swift; sourceTree = "<group>"; };
 		0441BDE42970020600541F26 /* ThemeFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeFont.swift; sourceTree = "<group>"; };
+		0441BDE729700A9E00541F26 /* LabelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelFactory.swift; sourceTree = "<group>"; };
+		0441BDE92970CA6D00541F26 /* AmountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountView.swift; sourceTree = "<group>"; };
+		0441BDEB297156DB00541F26 /* UIView+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,8 +130,9 @@
 		0441BD91296EB21B00541F26 /* TipCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				0441BDE629700A7900541F26 /* Factories */,
 				0441BDE1296F895900541F26 /* Config */,
-				0441BDDE296F87AE00541F26 /* Extensions */,
+				0441BDDE296F87AE00541F26 /* UIKIt Extensions */,
 				0441BDD2296F034900541F26 /* Application Delegates */,
 				0441BDD0296F032700541F26 /* Screen */,
 				0441BDD1296F033900541F26 /* Resources */,
@@ -193,16 +200,18 @@
 				0441BDD8296F045400541F26 /* BillInputView.swift */,
 				0441BDDA296F047A00541F26 /* TipInputView.swift */,
 				0441BDDC296F04A100541F26 /* SplitTipInputView.swift */,
+				0441BDE92970CA6D00541F26 /* AmountView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		0441BDDE296F87AE00541F26 /* Extensions */ = {
+		0441BDDE296F87AE00541F26 /* UIKIt Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				0441BDDF296F87F300541F26 /* UIColor+HexString.swift */,
+				0441BDEB297156DB00541F26 /* UIView+Shadow.swift */,
 			);
-			path = Extensions;
+			path = "UIKIt Extensions";
 			sourceTree = "<group>";
 		};
 		0441BDE1296F895900541F26 /* Config */ = {
@@ -212,6 +221,14 @@
 				0441BDE42970020600541F26 /* ThemeFont.swift */,
 			);
 			path = Config;
+			sourceTree = "<group>";
+		};
+		0441BDE629700A7900541F26 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				0441BDE729700A9E00541F26 /* LabelFactory.swift */,
+			);
+			path = Factories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,15 +377,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0441BDEC297156DB00541F26 /* UIView+Shadow.swift in Sources */,
 				0441BDE52970020600541F26 /* ThemeFont.swift in Sources */,
 				0441BDE0296F87F300541F26 /* UIColor+HexString.swift in Sources */,
 				0441BD97296EB21B00541F26 /* MainViewController.swift in Sources */,
 				0441BDD5296F037C00541F26 /* LogoView.swift in Sources */,
 				0441BDD9296F045400541F26 /* BillInputView.swift in Sources */,
+				0441BDEA2970CA6D00541F26 /* AmountView.swift in Sources */,
 				0441BDD7296F042700541F26 /* ResultView.swift in Sources */,
 				0441BD93296EB21B00541F26 /* AppDelegate.swift in Sources */,
 				0441BD95296EB21B00541F26 /* SceneDelegate.swift in Sources */,
 				0441BDDD296F04A100541F26 /* SplitTipInputView.swift in Sources */,
+				0441BDE829700A9E00541F26 /* LabelFactory.swift in Sources */,
 				0441BDDB296F047A00541F26 /* TipInputView.swift in Sources */,
 				0441BDE3296F89DB00541F26 /* ThemeColor.swift in Sources */,
 			);
