@@ -12,7 +12,7 @@ class BillInputView: UIView {
     // MARK: - Properties
     
     private let headerView: HeaderView = {
-        return HeaderView()
+        return HeaderView(topText: "Enter", bottomText: "your bill")
     }()
     
     private let textFieldContainerView: UIView = {
@@ -90,7 +90,6 @@ class BillInputView: UIView {
         headerView.snp.makeConstraints { make in
             make.leading.equalToSuperview()
             make.centerY.equalTo(textFieldContainerView.snp.centerY)
-            make.height.equalTo(42)
             make.width.equalTo(68)
             make.trailing.equalTo(textFieldContainerView.snp.leading).offset(-24)
         }
