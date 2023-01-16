@@ -31,6 +31,8 @@
 		0441BDE829700A9E00541F26 /* LabelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0441BDE729700A9E00541F26 /* LabelFactory.swift */; };
 		0441BDEA2970CA6D00541F26 /* AmountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0441BDE92970CA6D00541F26 /* AmountView.swift */; };
 		0441BDEC297156DB00541F26 /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0441BDEB297156DB00541F26 /* UIView+Shadow.swift */; };
+		04BF0007297551FD00710E36 /* UIView+RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF0006297551FD00710E36 /* UIView+RoundedCorners.swift */; };
+		04BF000B297552B300710E36 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF000A297552B300710E36 /* HeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,8 @@
 		0441BDE729700A9E00541F26 /* LabelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelFactory.swift; sourceTree = "<group>"; };
 		0441BDE92970CA6D00541F26 /* AmountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountView.swift; sourceTree = "<group>"; };
 		0441BDEB297156DB00541F26 /* UIView+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
+		04BF0006297551FD00710E36 /* UIView+RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+RoundedCorners.swift"; sourceTree = "<group>"; };
+		04BF000A297552B300710E36 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +205,7 @@
 				0441BDDA296F047A00541F26 /* TipInputView.swift */,
 				0441BDDC296F04A100541F26 /* SplitTipInputView.swift */,
 				0441BDE92970CA6D00541F26 /* AmountView.swift */,
+				04BF000A297552B300710E36 /* HeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -208,8 +213,8 @@
 		0441BDDE296F87AE00541F26 /* UIKIt Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				0441BDDF296F87F300541F26 /* UIColor+HexString.swift */,
-				0441BDEB297156DB00541F26 /* UIView+Shadow.swift */,
+				04BF00092975520C00710E36 /* UIColor */,
+				04BF00082975520400710E36 /* UIView */,
 			);
 			path = "UIKIt Extensions";
 			sourceTree = "<group>";
@@ -229,6 +234,23 @@
 				0441BDE729700A9E00541F26 /* LabelFactory.swift */,
 			);
 			path = Factories;
+			sourceTree = "<group>";
+		};
+		04BF00082975520400710E36 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				0441BDEB297156DB00541F26 /* UIView+Shadow.swift */,
+				04BF0006297551FD00710E36 /* UIView+RoundedCorners.swift */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		04BF00092975520C00710E36 /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				0441BDDF296F87F300541F26 /* UIColor+HexString.swift */,
+			);
+			path = UIColor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -389,8 +411,10 @@
 				0441BD95296EB21B00541F26 /* SceneDelegate.swift in Sources */,
 				0441BDDD296F04A100541F26 /* SplitTipInputView.swift in Sources */,
 				0441BDE829700A9E00541F26 /* LabelFactory.swift in Sources */,
+				04BF0007297551FD00710E36 /* UIView+RoundedCorners.swift in Sources */,
 				0441BDDB296F047A00541F26 /* TipInputView.swift in Sources */,
 				0441BDE3296F89DB00541F26 /* ThemeColor.swift in Sources */,
+				04BF000B297552B300710E36 /* HeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
