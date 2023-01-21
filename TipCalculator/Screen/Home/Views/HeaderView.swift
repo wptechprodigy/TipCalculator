@@ -16,12 +16,16 @@ class HeaderView: UIView {
     
     private lazy var topTextLabel: UILabel = {
         return LabelFactory
-            .make(with: topText, font: ThemeFont.bold(ofSize: 18))
+            .make(
+                with: topText,
+                font: ThemeFont.bold(ofSize: 18))
     }()
     
     private lazy var bottomTextLabel: UILabel = {
         return LabelFactory
-            .make(with: bottomText, font: ThemeFont.regular(ofSize: 16))
+            .make(
+                with: bottomText, 
+                font: ThemeFont.regular(ofSize: 16))
     }()
     
     private let topSpacerView = UIView()
