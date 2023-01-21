@@ -33,6 +33,7 @@
 		0441BDEC297156DB00541F26 /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0441BDEB297156DB00541F26 /* UIView+Shadow.swift */; };
 		04BF0007297551FD00710E36 /* UIView+RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF0006297551FD00710E36 /* UIView+RoundedCorners.swift */; };
 		04BF000B297552B300710E36 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF000A297552B300710E36 /* HeaderView.swift */; };
+		04FA9761297AB8C800E80BC9 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FA9760297AB8C800E80BC9 /* Tip.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		0441BDEB297156DB00541F26 /* UIView+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
 		04BF0006297551FD00710E36 /* UIView+RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+RoundedCorners.swift"; sourceTree = "<group>"; };
 		04BF000A297552B300710E36 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		04FA9760297AB8C800E80BC9 /* Tip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,8 +175,7 @@
 		0441BDD0296F032700541F26 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
-				0441BDD3296F035C00541F26 /* Views */,
-				0441BD96296EB21B00541F26 /* MainViewController.swift */,
+				04FA975E297AAE3500E80BC9 /* Home */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -251,6 +252,24 @@
 				0441BDDF296F87F300541F26 /* UIColor+HexString.swift */,
 			);
 			path = UIColor;
+			sourceTree = "<group>";
+		};
+		04FA975E297AAE3500E80BC9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				04FA975F297AAE4600E80BC9 /* Model */,
+				0441BDD3296F035C00541F26 /* Views */,
+				0441BD96296EB21B00541F26 /* MainViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		04FA975F297AAE4600E80BC9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04FA9760297AB8C800E80BC9 /* Tip.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -411,6 +430,7 @@
 				0441BD95296EB21B00541F26 /* SceneDelegate.swift in Sources */,
 				0441BDDD296F04A100541F26 /* SplitTipInputView.swift in Sources */,
 				0441BDE829700A9E00541F26 /* LabelFactory.swift in Sources */,
+				04FA9761297AB8C800E80BC9 /* Tip.swift in Sources */,
 				04BF0007297551FD00710E36 /* UIView+RoundedCorners.swift in Sources */,
 				0441BDDB296F047A00541F26 /* TipInputView.swift in Sources */,
 				0441BDE3296F89DB00541F26 /* ThemeColor.swift in Sources */,
