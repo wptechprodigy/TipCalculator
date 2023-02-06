@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Combine
 
 class MainViewController: UIViewController {
     
@@ -31,6 +32,9 @@ class MainViewController: UIViewController {
         stackView.spacing = 36
         return stackView
     }()
+    
+    private let viewModel = CalculatorViewModel()
+    private var cancellables = Set<AnyCancellable>()
 
     // MARK: - Lifecycle
     
@@ -38,6 +42,23 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = ThemeColor.bg
         layoutSubviews()
+        bind()
+    }
+    
+    private func bind() {
+        let input = CalculatorViewModel
+            .Input(
+                billPublisher: Just(100).eraseToAnyPublisher(),
+                tipPublisher: Just(.tenPercent).eraseToAnyPublisher(),
+                splitPublisher: Just(3).eraseToAnyPublisher())
+        let output = viewModel.transform(input: input)
+        
+        output
+            .updateViewPublisher
+            .sink { result in
+                print(">>> Result: \(result)")
+            }
+            .store(in: &cancellables)
     }
     
     // MARK: - Helper Methods

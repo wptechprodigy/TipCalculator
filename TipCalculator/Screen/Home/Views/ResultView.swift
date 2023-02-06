@@ -22,7 +22,10 @@ class ResultView: UIView {
         let label = UILabel()
         let text = NSMutableAttributedString(
             string: "$000",
-            attributes: [ .font: ThemeFont.bold(ofSize: 48)])
+            attributes: [
+                .font: ThemeFont.bold(ofSize: 48),
+                .foregroundColor: ThemeColor.text
+            ])
         text.addAttributes(
             [.font: ThemeFont.bold(ofSize: 24)],
             range: NSMakeRange(0, 1))

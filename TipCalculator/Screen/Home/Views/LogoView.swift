@@ -21,14 +21,21 @@ class LogoView: UIView {
         let label = UILabel()
         let text = NSMutableAttributedString(
             string: "Mr TIP",
-            attributes: [.font: ThemeFont.demiBold(ofSize: 16)])
+            attributes: [
+                .font: ThemeFont.demiBold(ofSize: 16),
+                .foregroundColor: ThemeColor.text
+            ])
         text.addAttributes([.font: ThemeFont.bold(ofSize: 24)], range: NSMakeRange(3, 3))
         label.attributedText = text
         return label
     }()
     
     private let bottomLabel: UILabel = {
-        LabelFactory.make(with: "Calculator", font: ThemeFont.demiBold(ofSize: 20), textAlignment: .left)
+        LabelFactory
+            .make(
+                with: "Calculator",
+                font: ThemeFont.demiBold(ofSize: 20), 
+                textAlignment: .left)
     }()
     
     private lazy var vStackView: UIStackView = {
