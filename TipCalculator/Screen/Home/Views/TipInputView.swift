@@ -77,6 +77,12 @@ class TipInputView: UIView {
         button.titleLabel?.font = ThemeFont.bold(ofSize: 20)
         button.backgroundColor = ThemeColor.primary
         button.tintColor = .white
+        button
+            .tapPublisher
+            .sink { [weak self] _ in
+                self?.didTapCustomTipButton()
+            }
+            .store(in: &cancellables)
         return button
     }()
     
@@ -142,5 +148,9 @@ class TipInputView: UIView {
         ], range: NSMakeRange(2, 1))
         button.setAttributedTitle(text, for: .normal)
         return button
+    }
+    
+    private func didTapCustomTipButton() {
+        print(">>> Custom Tip tapped...")
     }
 }
