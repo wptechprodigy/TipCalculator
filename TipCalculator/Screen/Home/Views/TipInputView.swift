@@ -168,8 +168,12 @@ class TipInputView: UIView {
                 style: .cancel)
             let okAction = UIAlertAction(
                 title: "OK",
-                style: .default) { _ in
-                    print(">>> Tip agreed on")
+                style: .default) { [weak self] _ in
+                    guard let text = controller.textFields?.first?.text,
+                          let value = Int(text) else {
+                        return
+                    }
+                    self?.tipSubject.send(.custom(value: value))
                 }
             [cancelAction, okAction].forEach(controller.addAction(_:))
             
