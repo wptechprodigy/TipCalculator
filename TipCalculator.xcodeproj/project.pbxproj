@@ -36,6 +36,7 @@
 		04CC747E29915EEA00B9359E /* CalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CC747D29915EEA00B9359E /* CalculatorViewModel.swift */; };
 		04CC74802991692B00B9359E /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CC747F2991692B00B9359E /* Result.swift */; };
 		04CC748329916F9000B9359E /* String+DoubleValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CC748229916F9000B9359E /* String+DoubleValue.swift */; };
+		04CC74862992460600B9359E /* UIResponder+ParentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CC74852992460600B9359E /* UIResponder+ParentController.swift */; };
 		04FA9761297AB8C800E80BC9 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FA9760297AB8C800E80BC9 /* Tip.swift */; };
 		04FA9763297C3E2B00E80BC9 /* UIView+SelectedCornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FA9762297C3E2B00E80BC9 /* UIView+SelectedCornerRadius.swift */; };
 /* End PBXBuildFile section */
@@ -86,6 +87,7 @@
 		04CC747D29915EEA00B9359E /* CalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewModel.swift; sourceTree = "<group>"; };
 		04CC747F2991692B00B9359E /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		04CC748229916F9000B9359E /* String+DoubleValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+DoubleValue.swift"; sourceTree = "<group>"; };
+		04CC74852992460600B9359E /* UIResponder+ParentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder+ParentController.swift"; sourceTree = "<group>"; };
 		04FA9760297AB8C800E80BC9 /* Tip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
 		04FA9762297C3E2B00E80BC9 /* UIView+SelectedCornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SelectedCornerRadius.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -222,6 +224,7 @@
 		0441BDDE296F87AE00541F26 /* UIKIt Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				04CC7484299245ED00B9359E /* UIResponder */,
 				04CC748129916F7400B9359E /* String */,
 				04BF00092975520C00710E36 /* UIColor */,
 				04BF00082975520400710E36 /* UIView */,
@@ -278,6 +281,14 @@
 				04CC748229916F9000B9359E /* String+DoubleValue.swift */,
 			);
 			path = String;
+			sourceTree = "<group>";
+		};
+		04CC7484299245ED00B9359E /* UIResponder */ = {
+			isa = PBXGroup;
+			children = (
+				04CC74852992460600B9359E /* UIResponder+ParentController.swift */,
+			);
+			path = UIResponder;
 			sourceTree = "<group>";
 		};
 		04FA975E297AAE3500E80BC9 /* Home */ = {
@@ -460,6 +471,7 @@
 				0441BD93296EB21B00541F26 /* AppDelegate.swift in Sources */,
 				0441BD95296EB21B00541F26 /* SceneDelegate.swift in Sources */,
 				0441BDDD296F04A100541F26 /* SplitTipInputView.swift in Sources */,
+				04CC74862992460600B9359E /* UIResponder+ParentController.swift in Sources */,
 				0441BDE829700A9E00541F26 /* LabelFactory.swift in Sources */,
 				04FA9761297AB8C800E80BC9 /* Tip.swift in Sources */,
 				04CC748329916F9000B9359E /* String+DoubleValue.swift in Sources */,
