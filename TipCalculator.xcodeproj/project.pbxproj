@@ -37,6 +37,7 @@
 		04CC74802991692B00B9359E /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CC747F2991692B00B9359E /* Result.swift */; };
 		04CC748329916F9000B9359E /* String+DoubleValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CC748229916F9000B9359E /* String+DoubleValue.swift */; };
 		04CC74862992460600B9359E /* UIResponder+ParentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CC74852992460600B9359E /* UIResponder+ParentController.swift */; };
+		04CC7489299264DB00B9359E /* Int+StringValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CC7488299264DB00B9359E /* Int+StringValue.swift */; };
 		04FA9761297AB8C800E80BC9 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FA9760297AB8C800E80BC9 /* Tip.swift */; };
 		04FA9763297C3E2B00E80BC9 /* UIView+SelectedCornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FA9762297C3E2B00E80BC9 /* UIView+SelectedCornerRadius.swift */; };
 /* End PBXBuildFile section */
@@ -88,6 +89,7 @@
 		04CC747F2991692B00B9359E /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		04CC748229916F9000B9359E /* String+DoubleValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+DoubleValue.swift"; sourceTree = "<group>"; };
 		04CC74852992460600B9359E /* UIResponder+ParentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder+ParentController.swift"; sourceTree = "<group>"; };
+		04CC7488299264DB00B9359E /* Int+StringValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+StringValue.swift"; sourceTree = "<group>"; };
 		04FA9760297AB8C800E80BC9 /* Tip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
 		04FA9762297C3E2B00E80BC9 /* UIView+SelectedCornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SelectedCornerRadius.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -224,6 +226,7 @@
 		0441BDDE296F87AE00541F26 /* UIKIt Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				04CC7487299264CE00B9359E /* Int */,
 				04CC7484299245ED00B9359E /* UIResponder */,
 				04CC748129916F7400B9359E /* String */,
 				04BF00092975520C00710E36 /* UIColor */,
@@ -289,6 +292,14 @@
 				04CC74852992460600B9359E /* UIResponder+ParentController.swift */,
 			);
 			path = UIResponder;
+			sourceTree = "<group>";
+		};
+		04CC7487299264CE00B9359E /* Int */ = {
+			isa = PBXGroup;
+			children = (
+				04CC7488299264DB00B9359E /* Int+StringValue.swift */,
+			);
+			path = Int;
 			sourceTree = "<group>";
 		};
 		04FA975E297AAE3500E80BC9 /* Home */ = {
@@ -464,6 +475,7 @@
 				0441BDD5296F037C00541F26 /* LogoView.swift in Sources */,
 				0441BDD9296F045400541F26 /* BillInputView.swift in Sources */,
 				04CC74802991692B00B9359E /* Result.swift in Sources */,
+				04CC7489299264DB00B9359E /* Int+StringValue.swift in Sources */,
 				0441BDEA2970CA6D00541F26 /* AmountView.swift in Sources */,
 				0441BDD7296F042700541F26 /* ResultView.swift in Sources */,
 				04FA9763297C3E2B00E80BC9 /* UIView+SelectedCornerRadius.swift in Sources */,

@@ -50,7 +50,7 @@ class MainViewController: UIViewController {
             .Input(
                 billPublisher: billInputView.valuePublisher,
                 tipPublisher: tipInputView.valuePublisher,
-                splitPublisher: Just(3).eraseToAnyPublisher())
+                splitPublisher: splitTipInputView.valuePublisher)
         let output = viewModel.transform(input: input)
         
         output

@@ -29,20 +29,14 @@ class CalculatorViewModel {
     // MARK: - Helper
     
     func transform(input: Input) -> Output {
-        
-        input
-            .tipPublisher
-            .sink { tip in
-                print(">>> The tip is \(tip)")
-            }
-            .store(in: &cancellables)
-        
         let result = Result(
             amountPerPerson: 50,
             totalBill: 150,
             totalTip: 20)
         
         return Output(
-            updateViewPublisher: Just(result).eraseToAnyPublisher())
+            updateViewPublisher:
+                Just(result).eraseToAnyPublisher()
+        )
     }
 }

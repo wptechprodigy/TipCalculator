@@ -6,8 +6,18 @@
 //
 
 import UIKit
+import Combine
+import CombineCocoa
 
 class SplitTipInputView: UIView {
+    
+    // MARK: - Observers
+    
+    private var cancellables = Set<AnyCancellable>()
+    private let splitSubject: CurrentValueSubject<Int, Never> = .init(1)
+    var valuePublisher: AnyPublisher<Int, Never> {
+        return splitSubject.removeDuplicates().eraseToAnyPublisher()
+    }
     
     // MARK: - Properties
     
@@ -18,12 +28,20 @@ class SplitTipInputView: UIView {
     }()
     
     private lazy var decrementButton: UIButton = {
-        return buildButton(
+        let button = buildButton(
             withTitle: "-",
             corners: [
                 .layerMinXMaxYCorner,
                 .layerMinXMinYCorner
             ])
+        button
+            .tapPublisher
+            .flatMap { [unowned self] _ in
+                Just(splitSubject.value == 1 ? 1 : splitSubject.value - 1)
+            }
+            .assign(to: \.value, on: splitSubject)
+            .store(in: &cancellables)
+        return button
     }()
     
     private lazy var quantityLabel: UILabel = {
@@ -35,12 +53,20 @@ class SplitTipInputView: UIView {
     }()
     
     private lazy var incrementButton: UIButton = {
-        return buildButton(
+        let button = buildButton(
             withTitle: "+",
             corners: [
                 .layerMaxXMinYCorner,
                 .layerMaxXMaxYCorner
             ])
+        button
+            .tapPublisher
+            .flatMap { [unowned self] _ in
+                Just(splitSubject.value + 1)
+            }
+            .assign(to: \.value, on: splitSubject)
+            .store(in: &cancellables)
+        return button
     }()
     
     private lazy var hStackView: UIStackView = {
@@ -59,6 +85,7 @@ class SplitTipInputView: UIView {
     init() {
         super.init(frame: .zero)
         layout()
+        observe()
     }
     
     required init?(coder: NSCoder) {
@@ -81,6 +108,14 @@ class SplitTipInputView: UIView {
     }
     
     // MARK: - Configuration
+    
+    private func observe() {
+        splitSubject
+            .sink { [unowned self] quantity in
+                quantityLabel.text = quantity.stringValue
+            }
+            .store(in: &cancellables)
+    }
     
     private func layout() {
         [headerView, hStackView].forEach(addSubview(_:))
