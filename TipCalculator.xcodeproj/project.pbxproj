@@ -40,6 +40,8 @@
 		04CC7489299264DB00B9359E /* Int+StringValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CC7488299264DB00B9359E /* Int+StringValue.swift */; };
 		04CC748C2993BFB100B9359E /* Double+CurrencyFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CC748B2993BFB100B9359E /* Double+CurrencyFormat.swift */; };
 		04CC748E2993C83A00B9359E /* UIView+LocalCurrencySymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CC748D2993C83A00B9359E /* UIView+LocalCurrencySymbol.swift */; };
+		04D6203F2994037100D81D8E /* Click.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 04D6203E2994037100D81D8E /* Click.m4a */; };
+		04D62042299403C600D81D8E /* DefaultAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D62041299403C600D81D8E /* DefaultAudioPlayer.swift */; };
 		04FA9761297AB8C800E80BC9 /* Tip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FA9760297AB8C800E80BC9 /* Tip.swift */; };
 		04FA9763297C3E2B00E80BC9 /* UIView+SelectedCornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FA9762297C3E2B00E80BC9 /* UIView+SelectedCornerRadius.swift */; };
 /* End PBXBuildFile section */
@@ -94,6 +96,8 @@
 		04CC7488299264DB00B9359E /* Int+StringValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+StringValue.swift"; sourceTree = "<group>"; };
 		04CC748B2993BFB100B9359E /* Double+CurrencyFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+CurrencyFormat.swift"; sourceTree = "<group>"; };
 		04CC748D2993C83A00B9359E /* UIView+LocalCurrencySymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+LocalCurrencySymbol.swift"; sourceTree = "<group>"; };
+		04D6203E2994037100D81D8E /* Click.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Click.m4a; sourceTree = "<group>"; };
+		04D62041299403C600D81D8E /* DefaultAudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAudioPlayer.swift; sourceTree = "<group>"; };
 		04FA9760297AB8C800E80BC9 /* Tip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tip.swift; sourceTree = "<group>"; };
 		04FA9762297C3E2B00E80BC9 /* UIView+SelectedCornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+SelectedCornerRadius.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -152,6 +156,7 @@
 		0441BD91296EB21B00541F26 /* TipCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				04D62040299403A900D81D8E /* Services */,
 				0441BDE629700A7900541F26 /* Factories */,
 				0441BDE1296F895900541F26 /* Config */,
 				0441BDDE296F87AE00541F26 /* UIKIt Extensions */,
@@ -199,6 +204,7 @@
 		0441BDD1296F033900541F26 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				04D6203E2994037100D81D8E /* Click.m4a */,
 				0441BD9B296EB21E00541F26 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -314,6 +320,14 @@
 				04CC748B2993BFB100B9359E /* Double+CurrencyFormat.swift */,
 			);
 			path = Double;
+			sourceTree = "<group>";
+		};
+		04D62040299403A900D81D8E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				04D62041299403C600D81D8E /* DefaultAudioPlayer.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		04FA975E297AAE3500E80BC9 /* Home */ = {
@@ -458,6 +472,7 @@
 			files = (
 				0441BD9F296EB21E00541F26 /* LaunchScreen.storyboard in Resources */,
 				0441BD9C296EB21E00541F26 /* Assets.xcassets in Resources */,
+				04D6203F2994037100D81D8E /* Click.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,6 +498,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04CC748C2993BFB100B9359E /* Double+CurrencyFormat.swift in Sources */,
+				04D62042299403C600D81D8E /* DefaultAudioPlayer.swift in Sources */,
 				0441BDEC297156DB00541F26 /* UIView+Shadow.swift in Sources */,
 				0441BDE52970020600541F26 /* ThemeFont.swift in Sources */,
 				0441BDE0296F87F300541F26 /* UIColor+HexString.swift in Sources */,
