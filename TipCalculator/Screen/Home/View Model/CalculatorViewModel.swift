@@ -18,12 +18,14 @@ class CalculatorViewModel {
         let billPublisher: AnyPublisher<Double, Never>
         let tipPublisher: AnyPublisher<Tip, Never>
         let splitPublisher: AnyPublisher<Int, Never>
+        let logoViewTapPublisher: AnyPublisher<Void, Never>
     }
     
     // MARK: - Output
     
     struct Output {
         let updateViewPublisher: AnyPublisher<Result, Never>
+        let resultCalculatorPublisher: AnyPublisher<Void, Never>
     }
     
     // MARK: - Helpers
@@ -47,8 +49,11 @@ class CalculatorViewModel {
             }
             .eraseToAnyPublisher()
         
+        let resultCalculatorPublisher = input.logoViewTapPublisher
+        
         return Output(
-            updateViewPublisher: updateViewPublisher
+            updateViewPublisher: updateViewPublisher,
+            resultCalculatorPublisher: resultCalculatorPublisher
         )
     }
     

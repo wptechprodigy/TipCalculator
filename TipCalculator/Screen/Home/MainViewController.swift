@@ -69,7 +69,8 @@ class MainViewController: UIViewController {
             .Input(
                 billPublisher: billInputView.valuePublisher,
                 tipPublisher: tipInputView.valuePublisher,
-                splitPublisher: splitTipInputView.valuePublisher)
+                splitPublisher: splitTipInputView.valuePublisher,
+                logoViewTapPublisher: logoViewTapPublisher)
         let output = viewModel.transform(input: input)
         
         output
@@ -78,18 +79,19 @@ class MainViewController: UIViewController {
                 resultView.configure(with: result)
             }
             .store(in: &cancellables)
+        
+        output
+            .resultCalculatorPublisher
+            .sink { _ in
+                print("The tap is passed into the VM...")
+            }
+            .store(in: &cancellables)
     }
     
     private func observe() {
         viewTapPublisher
             .sink { [unowned self] _ in
                 view.endEditing(true)
-            }
-            .store(in: &cancellables)
-        
-        logoViewTapPublisher
-            .sink { _ in
-                print("Logo tapped...")
             }
             .store(in: &cancellables)
     }
