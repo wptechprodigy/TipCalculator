@@ -26,7 +26,7 @@ class CalculatorViewModel {
         let updateViewPublisher: AnyPublisher<Result, Never>
     }
     
-    // MARK: - Helper
+    // MARK: - Helpers
     
     func transform(input: Input) -> Output {
         

@@ -26,7 +26,7 @@ class AmountView: UIView {
     private lazy var amountLabel: UILabel = {
         let label = UILabel()
         let text = NSMutableAttributedString(
-            string: "$000",
+            string: "\(localCurrencySymbol)0",
             attributes: [
                 .font: ThemeFont.bold(ofSize: 24),
                 .foregroundColor: ThemeColor.primary
@@ -37,6 +37,8 @@ class AmountView: UIView {
                 range: NSMakeRange(0, 1))
         label.attributedText = text
         label.textAlignment = textAlignment
+        label.adjustsFontSizeToFitWidth = true
+        label.numberOfLines = 0
         return label
     }()
     

@@ -18,10 +18,10 @@ class ResultView: UIView {
                 font: ThemeFont.demiBold(ofSize: 16))
     }()
     
-    private let amountPerPersonLabel: UILabel = {
+    private lazy var amountPerPersonLabel: UILabel = {
         let label = UILabel()
         let text = NSMutableAttributedString(
-            string: "$000",
+            string: "\(localCurrencySymbol)0",
             attributes: [
                 .font: ThemeFont.bold(ofSize: 48),
                 .foregroundColor: ThemeColor.text
@@ -31,6 +31,7 @@ class ResultView: UIView {
             range: NSMakeRange(0, 1))
         label.attributedText = text
         label.textAlignment = .center
+        label.adjustsFontSizeToFitWidth = true
         return label
     }()
     
@@ -40,18 +41,30 @@ class ResultView: UIView {
         return view
     }()
     
+    private let totalBillView: AmountView = {
+        let view = AmountView(
+            title: "Total Bill",
+            textAlignment: .left)
+        view.contentCompressionResistancePriority(for: .horizontal)
+        return view
+    }()
+    
+    private let totalTipView: AmountView = {
+        let view = AmountView(
+            title: "Total Tip",
+            textAlignment: .right)
+        view.contentCompressionResistancePriority(for: .horizontal)
+        return view
+    }()
+    
     private lazy var hStackView: UIStackView = {
         let sv = UIStackView(arrangedSubviews: [
-            AmountView(
-                title: "Total Bill",
-                textAlignment: .left),
+            totalBillView,
             UIView(),
-            AmountView(
-                title: "Total Tip",
-                textAlignment: .right)
+            totalTipView
         ])
         sv.axis = .horizontal
-        sv.distribution = .fillEqually
+        sv.distribution = .fillProportionally
         return sv
     }()
     
@@ -80,6 +93,24 @@ class ResultView: UIView {
     }
     
     // MARK: - Configuration
+    
+    func configure(with result: Result) {
+        let amountPerPersonText = NSMutableAttributedString(
+            string: result.amountPerPerson.currencyFormatted,
+            attributes: [
+                .font: ThemeFont.bold(ofSize: 48),
+                .foregroundColor: ThemeColor.text
+            ])
+        amountPerPersonText.addAttributes(
+            [
+                .font: ThemeFont.bold(ofSize: 24)
+            ],
+            range: NSMakeRange(0, 1))
+        amountPerPersonLabel.attributedText = amountPerPersonText
+        
+        totalBillView.configure(amount: result.totalBill)
+        totalTipView.configure(amount: result.totalTip)
+    }
     
     private func layout() {
         backgroundColor = .white

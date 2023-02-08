@@ -55,8 +55,8 @@ class MainViewController: UIViewController {
         
         output
             .updateViewPublisher
-            .sink { result in
-                // TODO: - Update view elemnts with output
+            .sink { [unowned self] result in
+                resultView.configure(with: result)
             }
             .store(in: &cancellables)
     }

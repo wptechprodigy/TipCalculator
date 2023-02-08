@@ -24,10 +24,10 @@ class BillInputView: UIView {
         return view
     }()
     
-    private let currencyDenominationLabel: UILabel = {
+    private lazy var currencyDenominationLabel: UILabel = {
         let label = LabelFactory
             .make(
-                with: "$",
+                with: localCurrencySymbol,
                 font: ThemeFont.bold(ofSize: 24))
         label.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         return label
