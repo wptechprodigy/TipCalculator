@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 import Combine
+import CombineCocoa
 
 class MainViewController: UIViewController {
     
@@ -35,6 +36,23 @@ class MainViewController: UIViewController {
     
     private let viewModel = CalculatorViewModel()
     private var cancellables = Set<AnyCancellable>()
+    
+    private lazy var viewTapPublisher: AnyPublisher<Void, Never> = {
+        let tapGesture = UITapGestureRecognizer(target: self, action: nil)
+        view.addGestureRecognizer(tapGesture)
+        return tapGesture.tapPublisher.flatMap { _ in
+            Just(())
+        }.eraseToAnyPublisher()
+    }()
+    
+    private lazy var logoViewTapPublisher: AnyPublisher<Void, Never> = {
+        let tapGesture = UITapGestureRecognizer(target: self, action: nil)
+        tapGesture.numberOfTapsRequired = 2
+        view.addGestureRecognizer(tapGesture)
+        return tapGesture.tapPublisher.flatMap { _ in
+            Just(())
+        }.eraseToAnyPublisher()
+    }()
 
     // MARK: - Lifecycle
     
@@ -43,6 +61,7 @@ class MainViewController: UIViewController {
         view.backgroundColor = ThemeColor.bg
         layoutSubviews()
         bind()
+        observe()
     }
     
     private func bind() {
@@ -57,6 +76,20 @@ class MainViewController: UIViewController {
             .updateViewPublisher
             .sink { [unowned self] result in
                 resultView.configure(with: result)
+            }
+            .store(in: &cancellables)
+    }
+    
+    private func observe() {
+        viewTapPublisher
+            .sink { [unowned self] _ in
+                view.endEditing(true)
+            }
+            .store(in: &cancellables)
+        
+        logoViewTapPublisher
+            .sink { _ in
+                print("Logo tapped...")
             }
             .store(in: &cancellables)
     }
