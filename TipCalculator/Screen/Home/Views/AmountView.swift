@@ -65,6 +65,20 @@ class AmountView: UIView {
     
     // MARK: - Helper Methods
     
+    func configure(amount: Double) {
+        let amountText = NSMutableAttributedString(
+            string: amount.currencyFormatted,
+            attributes: [
+                .font: ThemeFont.bold(ofSize: 24),
+                .foregroundColor: ThemeColor.primary
+            ])
+        amountText
+            .addAttributes(
+                [.font: ThemeFont.demiBold(ofSize: 16)],
+                range: NSMakeRange(0, 1))
+        amountLabel.attributedText = amountText
+    }
+    
     private func layout() {
         addSubview(stackView)
         
